@@ -24,7 +24,7 @@
   font-weight: 700;
   font-size: 3vw;
 
-  color: rgba(102, 51, 51, 0.696);
+  color: #754949b1;
 }
 .nav a {
   text-decoration: none;
@@ -50,7 +50,7 @@
   padding: 15px;
   font-size: 20px;
   font-family: "Poppins";
-  background: #e4e4e4;
+  background: #ffffff69;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px 0px 16px 16px;
 }
