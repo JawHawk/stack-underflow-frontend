@@ -151,7 +151,6 @@
 #main-ques {
   font-weight: 500;
 }
-
 .close {
   margin: auto;
   margin-left: 40vh;
@@ -170,7 +169,7 @@
 .profile img {
   margin-top: 100px;
 }
-.profile button{
+.profile button {
   position: absolute;
   border-radius: 5px;
   font-size: 1.5rem;
