@@ -125,8 +125,15 @@
   bottom: 0;
   text-align: center;
   width: 100vw;
+  background-color: #fff;
 }
 
 .tag span{
   color: #c9620d;
+}
+
+.close
+{
+  margin: auto;
+  margin-left: 40vh;
 }
