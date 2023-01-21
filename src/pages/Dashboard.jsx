@@ -9,13 +9,12 @@ const Dashboard = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(addqs);
     const response = await fetch(
       "https://stackunderflowbackend.onrender.com/question/new",
       {
         method: "POST",
-        header: {
-          "content-type": "application/json",
+        headers: {
+          "Content-Type": "application/json",
           "auth-token": localStorage.getItem("auth-token"),
         },
         body: JSON.stringify({ content: addqs }),

@@ -17,7 +17,6 @@ function App() {
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
       </Routes>
-
       <Footer></Footer>
     </div>
   );
