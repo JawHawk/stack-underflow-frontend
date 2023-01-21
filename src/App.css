@@ -123,6 +123,7 @@
   bottom: 0;
   text-align: center;
   width: 100vw;
+  background-color: #fff;
 }
 
 .tag span {
@@ -149,4 +150,9 @@
 }
 #main-ques{
   font-weight: 500;
+
+.close
+{
+  margin: auto;
+  margin-left: 40vh;
 }
