@@ -6,10 +6,15 @@ const Login = () => {
     <div>
       <Navbar></Navbar>
       <form className="form">
-        <h1>Login In</h1>
-        Roll No. : <input type="text" className="input" />
+        <h1>Welcome to Stack Underflow</h1>
+        username : <input type="text" className="input" />
         
         <br />
+        
+        Password : <input type="text" className="input" />
+        <br/>
+        
+
         <button>submit</button>
       </form>
     </div>

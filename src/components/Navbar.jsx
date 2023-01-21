@@ -9,7 +9,7 @@ const Navbar = () => {
           <img src={logo}></img><Link to="/"  id="name"> Stack UnderFlow</Link>
         </div>
         <div className="log-sign">
-          <button>
+          <button className="button-">
             <Link to="/login">Login</Link>
           </button>
           <button>
