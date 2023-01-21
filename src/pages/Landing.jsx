@@ -7,6 +7,7 @@ const Landing = () => {
       <Navbar></Navbar>
       <div className="tag">All Your <span>stacks</span> under one place</div>
       
+      
     </div>
   );
 }

@@ -9,12 +9,13 @@ const Navbar = () => {
           <img src={logo}></img><Link to="/"  id="name"> Stack UnderFlow</Link>
         </div>
         <div className="log-sign">
+          <Link to="/login"><button>
+            Login
+          </button></Link>
+          <Link to="/signup">
           <button>
-            <Link to="/login">Login</Link>
-          </button>
-          <button>
-            <Link to="/signup">Sign up</Link>
-          </button>
+            Sign up
+          </button></Link>
         </div>
       </ul>
     </div>

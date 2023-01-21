@@ -7,8 +7,11 @@ const Login = () => {
       <Navbar></Navbar>
       <form className="form">
         <h1>Login In</h1>
-        Roll No. : <input type="text" className="input" />
+        Email : <input type="text" className="input" />
         
+        <br />
+        <br />
+        Password : <input type="text" className="input" />
         <br />
         <button>submit</button>
       </form>
