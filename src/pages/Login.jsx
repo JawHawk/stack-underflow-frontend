@@ -34,14 +34,12 @@ function handleChange(e){
     
   }
   return (
-
     <div>
       <Navbar></Navbar>
       <form className="form" onSubmit={login}>
         <Link to="/" ><button className="close">Close</button></Link>
         <h1>LogIn</h1>
         Email : <input type="text" placeholder="Enter your Email" className="input" name="email" onChange={handleChange}/>
-
         <br />
         <br />
         Password : <input type="password" placeholder="Enter your Password" className="input" name="password" onChange={handleChange} />
