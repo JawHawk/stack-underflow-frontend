@@ -2,13 +2,13 @@
 
 .App {
   text-align: center;
-  height: 200vh;
 
   background: conic-gradient(
     from 180deg at 50% 20.72%,
     #f49c53 0deg,
     rgba(244, 209, 209, 0.83) 360deg
   );
+  min-height: 100vh;
 }
 
 .tag {
@@ -119,10 +119,10 @@
 }
 
 .footer {
-  position: absolute;
-  /* bottom: 0; */
+  position: sticky;
+  bottom: 0;
   text-align: center;
-  width: 100vw;
+  width: 99vw;
   background-color: #dddddd40;
 }
 
@@ -139,6 +139,15 @@
   border-radius: 0.25rem;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+.questions button {
+  float: right;
+  border-radius: 0px 10px 10px 0px;
+  outline: none;
+  border: 1px solid grey;
+}
+.dash {
+}
+
 .usr {
   width: 40px;
 }
@@ -146,9 +155,11 @@
   background-color: #8080805c;
   padding: 0.1em;
   padding-inline: 4rem;
-  border-radius: 10px;
+  border-radius: 10px 0px 0px 10px;
 }
-
+#main-ques{
+  font-weight: 500;
+}
 .close {
   margin: auto;
   margin-left: 40vh;

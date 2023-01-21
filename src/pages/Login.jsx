@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 const Login = () => {
@@ -58,6 +58,7 @@ const Login = () => {
         <br />
         <button type="submit">submit</button>
       </form>
+      <Footer></Footer>
     </div>
   );
 };

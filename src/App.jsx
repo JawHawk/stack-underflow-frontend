@@ -21,7 +21,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
         <Route path="/profile" element={<Profile></Profile>}></Route>
       </Routes>
-      <Footer></Footer>
+      
     </div>
   );
 }
