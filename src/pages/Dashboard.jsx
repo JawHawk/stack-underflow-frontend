@@ -43,6 +43,7 @@ const Dashboard = () => {
         questions.map((el, index) => {
           return (
             <div key={index} className="questions">
+              <button >X</button>
               <div className="d-flex justify-content-between" id="usdate">
                 <span className="usr">user</span>
                 <span className="text-end">
