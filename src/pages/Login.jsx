@@ -7,6 +7,8 @@ const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
+
+
 function handleChange(e){
   e.preventDefault();
   if(e.target.name === "email"){
@@ -17,17 +19,26 @@ function handleChange(e){
   }
 
 }
-  function login(e) {
+  const login=async(e)=> {
     e.preventDefault()
-    console.log(email,password);
+    const response = await fetch("https://stackunderflowbackend.onrender.com/v1/loggedin/login", {
+      method: "POST",
+      headers :{
+        "content-type": "application/json"
+      },
+      body : JSON.stringify({email: email, password: password})
+    })
+    
+    const data = await response.json()
+    localStorage.setItem("auth-token", data.authtoken)
     
   }
   return (
 
     <div>
       <Navbar></Navbar>
-      <form className="form">
-        <Link to="/"><button className="close">Close</button></Link>
+      <form className="form" onSubmit={login}>
+        <Link to="/" ><button className="close">Close</button></Link>
         <h1>LogIn</h1>
         Email : <input type="text" placeholder="Enter your Email" className="input" name="email" onChange={handleChange}/>
 
@@ -36,7 +47,7 @@ function handleChange(e){
         Password : <input type="password" placeholder="Enter your Password" className="input" name="password" onChange={handleChange} />
         <br />
 
-        <button onClick={login}>submit</button>
+        <button type="submit">submit</button>
       </form>
     </div>
   );
