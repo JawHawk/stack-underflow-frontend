@@ -278,6 +278,7 @@
 .form-ques input::placeholder {
   /* Firefox, Chrome, Opera */
   text-align: center;
+  margin-right: -15vh;
 }
 
 .form-ques button {
