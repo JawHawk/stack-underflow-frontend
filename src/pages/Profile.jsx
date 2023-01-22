@@ -2,13 +2,28 @@ import React from "react";
 import userImg from "./../assets/profile-bot.png";
 import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 const Profile = () => {
   const [User, setUser] = useState(null);
+  const navigate = useNavigate();
+  const style = {
+    display: "flex",
+    flexDirection: "row",
+    width: "75vw",
+    justifyContent: "space-between",
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translateX(-50%) translateY(-50%)",
+  };
   const style2 = {
     
   };
 
   useEffect(() => {
+    if(!localStorage.getItem("auth-token")) {navigate('/login')}
+    else{
     fetch("https://stackunderflowbackend.onrender.com/v1/getUser", {
       method: "POST",
       headers: {
@@ -17,7 +32,7 @@ const Profile = () => {
       },
     })
       .then((response) => response.json())
-      .then((data) => setUser(data));
+      .then((data) => setUser(data)); }
   }, []);
 
   return (
