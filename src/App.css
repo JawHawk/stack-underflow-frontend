@@ -246,11 +246,11 @@
 }
 
 .form-ques{
-      position: fixed;
+      /* position: fixed; */
       /* margin-bottom: 10vh; */
     /* width: 60px; */
     /* height: 45px; */
-    bottom: -70px;
+    /* bottom: -70px; */
     right: 270px;
         height: 61px;
     background-color: #5e9fffc9;

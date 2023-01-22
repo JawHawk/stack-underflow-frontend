@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Spinner from "../components/Spinner";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 
 
 const Dashboard = () => {
