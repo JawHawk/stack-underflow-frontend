@@ -14,11 +14,9 @@ const Login = () => {
       setPassword(e.target.value);
     }
   }
-  const login = async (e) => {
+  const login = (e) => {
     e.preventDefault();
-    setEmail("")
-    setPassword("")
-    const response = await fetch(
+    fetch(
       "https://stackunderflowbackend.onrender.com/v1/loggedin/login",
       {
         method: "POST",
@@ -27,11 +25,17 @@ const Login = () => {
         },
         body: JSON.stringify({ email: email, password: password }),
       }
-      
-    );
-    const data = await response.json();
-    localStorage.setItem("auth-token", data.authtoken);
-    navigate("/dashboard")
+    ).then(response => {
+      if(response.ok){ return response.json()}
+      alert('Wrong Credentials')
+      throw new Error('Wrong Credentials')
+    })
+    .then(data => {
+      setEmail("");
+      setPassword("");
+      localStorage.setItem("auth-token", data.authtoken);
+      navigate("/dashboard");
+    })
   };
   return (
     <div>
