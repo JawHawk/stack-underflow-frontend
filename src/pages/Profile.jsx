@@ -4,19 +4,8 @@ import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
 const Profile = () => {
   const [User, setUser] = useState(null);
-  const style = {
-    display: "flex",
-    flexDirection: "row",
-    width: "75vw",
-    justifyContent: "space-between",
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translateX(-50%) translateY(-50%)",
-  };
   const style2 = {
-    scale: "1.4",
-    padding: "120px",
+    
   };
 
   useEffect(() => {
@@ -33,9 +22,9 @@ const Profile = () => {
 
   return (
     <div>
-      <div className="profile" style={style}>
+      <div className="profile">
         <img src={userImg} style={{ height: "400px" }} />
-        <div style={style2}>
+        <div style={style2} id="usr-data">
           {!User && <h3>Loading ...</h3>}
           {User && (
             <div>
