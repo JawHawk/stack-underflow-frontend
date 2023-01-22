@@ -30,8 +30,8 @@ const Landing = () => {
       </div>
 
       <div className="people-ilus">
-        <img src={man} alt="" />
-        <img src={women} alt="" />
+        <img  className="man" src={man} alt="" />
+        <img className="woman" src={women} alt="" />
       </div>
       <Footer />
     </div>
