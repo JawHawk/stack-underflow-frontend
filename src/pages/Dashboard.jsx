@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Question from "../components/Question";
 import Spinner from "../components/Spinner";
-// import Footer from "../components/Footer";
+import Forum from "./Forum";
 
 
 const Dashboard = () => {
@@ -64,7 +64,7 @@ const Dashboard = () => {
     {loading && <Spinner/>}
     <h1>Recent Questions</h1>
       {questions &&
-        questions.map((el, index) => <Question date={el.date} key={index} content={el.content} id={el.id} author={el.author} user={User}/> )}
+        questions.map((el, index) => <Question date={el.date} key={index} content={el.content} id={el._id} author={el.author} user={User}/> )}
         <div>
           <form action="" className="form form-ques">
             <input

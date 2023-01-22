@@ -40,10 +40,9 @@ const SignUp = () => {
             email: email,
             password: password,
           }),
-    
-    navigate("/login")
-    }
-      );
+        }
+        );
+        navigate("/login")
     } catch (err) {
       console.log(err);
     } finally {

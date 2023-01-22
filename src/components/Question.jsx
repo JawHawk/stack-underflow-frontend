@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Spinner from './Spinner';
+import Forum from '../pages/Forum'
 
 function Question(props) {
   const {date, id,content, author, user} = props  
@@ -21,7 +21,7 @@ function Question(props) {
   }, []);
 
   return (
-        <div className="questions">
+        <div className="questions" onClick={()=> {return (<div> <Forum id= {props.id}></Forum> </div>) }}>
             <div className="questions-info">
                 <div className="content" >
                     {content}

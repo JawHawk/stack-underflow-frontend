@@ -1,18 +1,23 @@
-import React from 'react'
+import React, {useState} from 'react'
+import Forum_Back from './Forum_Back'
 
 const Forum = (props) => {
-  // const getQuestion = async () => {
-  //   await fetch("/question/get/" + props.id)
-  // }
+  const [quest, setQuest] = useState()
+  const getQuestion= async () => {
+    const response = await fetch("/question/get/" + props.id, {
+      method: "GET",
+      headers: {
+        "Content-Type" : "application/json",
+        "auth-token": localStorage.getItem("auth-token")
+      }
+    })
+    const data = await response.json()
+    setQuest(data)
+  }
+  getQuestion()
+  console.log(quest)
   return (
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-
+<Forum_Back/>
   )
 }
 
