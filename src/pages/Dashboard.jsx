@@ -72,7 +72,7 @@ const Dashboard = () => {
           </button>
         </form>
       </div>
-      <h1>Recent Questions</h1>
+      <h2><strong>Recent Questions</strong></h2>
       {loading && <Spinner />}
       {questions &&
         questions.map((el, index) => (
