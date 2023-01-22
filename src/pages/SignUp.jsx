@@ -8,7 +8,7 @@ const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   function handleChange(e) {
     e.preventDefault();
     if (e.target.name === "email") {
@@ -20,27 +20,32 @@ const SignUp = () => {
     }
   }
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setLoading(true)
-    try{
-      await fetch("http://localhost:5000/v1/signup/createuser", {
-        method: "POST",
-        headers:{
-          "Content-Type" : "application/json"
-        },
-        body : JSON.stringify({name : name, email : email, password: password})
-      })
+    e.preventDefault();
+    setLoading(true);
+    try {
+      await fetch(
+        "https://stackunderflowbackend.onrender.com/v1/signup/createuser",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            password: password,
+          }),
+        }
+      );
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading(false);
     }
-    catch(err){
-      console.log(err)
-    }
-    finally{
-      setLoading(false)
-    }
-  }
+  };
   return (
     <div>
-    {loading && <Spinner/>}
+      {loading && <Spinner />}
       <form className="form" onSubmit={handleSubmit}>
         <Link to="/">
           <button className="close">Close</button>
@@ -78,7 +83,7 @@ const SignUp = () => {
         <br />
         <button type="submit">submit</button>
       </form>
-      <Footer/>
+      <Footer />
     </div>
   );
 };
