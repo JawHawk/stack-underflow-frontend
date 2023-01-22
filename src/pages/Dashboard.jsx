@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Question from "../components/Question";
 import Spinner from "../components/Spinner";
+// import Footer from "../components/Footer";
 
 
 const Dashboard = () => {
@@ -55,14 +56,17 @@ const Dashboard = () => {
           setUser(data)})
   }, []);
   return (
+    
     <div className="text-center dash">
+      
     {loading && <Spinner/>}
+    <h1>Recent Questions</h1>
       {questions &&
         questions.map((el, index) => <Question date={el.date} key={index} content={el.content} id={el.id} author={el.author} user={User}/> )}
       <button className="ask-btn" onClick={handleClick}>
         Ask Question ?
-      </button>
-      {display && (
+      </button> 
+      {/* {display && ( */}
         <div>
           <form action="" className="form form-ques">
             <input
@@ -70,13 +74,15 @@ const Dashboard = () => {
               value={addqs}
               onChange={handleChange}
               className="input"
+              placeholder="Ask Your Question"
             />
             <button type="submit" onClick={handleSubmit}>
               submit
             </button>
           </form>
         </div>
-      )}
+      {/* )} */}
+      {/* <Footer></Footer> */}
     </div>
   );
 };
