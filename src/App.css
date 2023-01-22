@@ -253,21 +253,38 @@
 }
 
 .form-ques{
-      /* position: fixed; */
+      position: fixed;
       /* margin-bottom: 10vh; */
     /* width: 60px; */
     /* height: 45px; */
-    /* bottom: -70px; */
-    right: 270px;
-        height: 61px;
+    bottom: 0px;
+    /* right: 270px; */
+        height: 70px;
     background-color: #5e9fffc9;
-    padding: 0;
-    padding-inline: 15px;
+    min-width: 100vw;
+    margin: 10px;
+    /* padding-inline: 10px; */
+    /* width: 100%; */
+    /* padding-inline: 15px; */
     color: #000;
-    /* width: 99vw; */
     border-radius: 10px;
     text-align: center;
     box-shadow: 2px 2px 3px #999;
+}
+.form-ques input{
+  position: relative;
+  left: -35px;
+  width: 80vw;
+  bottom: 10px;
+  
+  /* height: 50px;
+  margin-bottom: 880px; */
+}
+.form-ques button{
+  position: relative;
+  bottom: 10px;
+  right: 15px;
+
 }
 #password{
   /* margin-right: 10vh; */
