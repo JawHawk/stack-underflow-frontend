@@ -183,35 +183,42 @@
 
 .questions {
   background: white;
-  max-width: 450px;
+  width: 600px;
   margin: auto;
   margin-bottom: 1rem;
   padding: 1rem 2rem;
   border-radius: 0.25rem;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .questions button {
   float: right;
-  border-radius: 0px 10px 10px 0px;
+  width: 30px;
+  height: 30px;
   outline: none;
   border: 1px solid grey;
 }
 
-.usr {
-  width: 40px;
-}
-#usdate {
+.questions-info {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+} 
+.questions-info .content{
   background-color: #8080805c;
   padding: 0.1em;
-  padding-inline: 4rem;
-  border-radius: 10px 0px 0px 10px;
+  border-radius: 10px 10px 10px 10px;
 }
-#main-ques {
+
+#main-ques{
   font-weight: 500;
 }
 .close {
   margin: auto;
-  margin-left: 40vh;
+  margin-left: 35vh;
 }
 .profile span {
   text-align: center;
@@ -235,35 +242,57 @@
   left: 17rem;
 }
 
-.ask-btn {
-  position: fixed;
-  /* width: 60px; */
-  /* height: 45px; */
-  bottom: 40px;
-  right: 40px;
-  background-color: #0d6efdd1;
-  color: #000;
-  border-radius: 50px;
-  text-align: center;
-  box-shadow: 2px 2px 3px #999;
+.ask-btn{
+      /* position: fixed; */
+    /* width: 60px; */
+    /* height: 45px; */
+    bottom: 40px;
+    right: 40px;
+    background-color: #0d6efdd1;
+    color: #000;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
 }
 
-.form-ques {
-  position: fixed;
-  /* width: 60px; */
-  /* height: 45px; */
-  bottom: 20px;
-  right: 40px;
-  height: 61px;
-  background-color: #5e9fffc9;
-  padding: 0;
-  padding-inline: 15px;
-  color: #000;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 2px 2px 3px #999;
+.form-ques{
+      position: fixed;
+      /* margin-bottom: 10vh; */
+    /* width: 60px; */
+    /* height: 45px; */
+    bottom: 0px;
+    /* right: 270px; */
+        height: 70px;
+    background-color: #5e9fffc9;
+    min-width: 100vw;
+    margin: 10px;
+    /* padding-inline: 10px; */
+    /* width: 100%; */
+    /* padding-inline: 15px; */
+    color: #000;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
 }
+.form-ques input{
+  position: relative;
+  left: -35px;
+  width: 80vw;
+  bottom: 10px;
+  
+  /* height: 50px;
+  margin-bottom: 880px; */
+}
+.form-ques button{
+  position: relative;
+  bottom: 10px;
+  right: 15px;
 
-.my-5 img {
-  height: 50vh;
 }
+#password{
+  /* margin-right: 10vh; */
+  margin-right: 3vh;
+}
+/* .input{
+  align-items: center;
+} */
