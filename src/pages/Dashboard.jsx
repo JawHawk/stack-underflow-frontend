@@ -55,25 +55,34 @@ const Dashboard = () => {
   }, []);
   return (
     <div className="text-center dash">
-      
-    {loading && <Spinner/>}
-    <h1>Recent Questions</h1>
+      <div>
+        <form action="" className="form form-ques">
+          <input
+            type="text"
+            value={addqs}
+            onChange={handleChange}
+            className="input"
+            placeholder="Ask Your Question"
+          />
+          <button type="submit" onClick={handleSubmit}>
+            submit
+          </button>
+        </form>
+      </div>
+      <h1>Recent Questions</h1>
+      {loading && <Spinner />}
       {questions &&
-        questions.map((el, index) => <Question date={el.date} key={index} content={el.content} id={el._id} author={el.author} user={User}/> )}
-        <div>
-          <form action="" className="form form-ques">
-            <input
-              type="text"
-              value={addqs}
-              onChange={handleChange}
-              className="input"
-              placeholder="Ask Your Question"
-            />
-            <button type="submit" onClick={handleSubmit}>
-              submit
-            </button>
-          </form>
-        </div>
+        questions.map((el, index) => (
+          <Question
+            date={el.date}
+            key={index}
+            content={el.content}
+            id={el._id}
+            author={el.author}
+            user={User}
+          />
+        ))}
+
       {/* )} */}
       {/* <Footer></Footer> */}
     </div>
