@@ -5,7 +5,6 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Navbar from "./components/Navbar";
 import Dashboard from "./pages/Dashboard";
-import Footer from "./components/Footer";
 import Profile from "./pages/Profile";
 import { useEffect, createContext, useState } from "react";
 import Forum from "./pages/Forum";
