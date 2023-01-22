@@ -1,6 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import Question from "../components/Question";
 import Spinner from "../components/Spinner";
+// import Footer from "../components/Footer";
 
 
 const Dashboard = () => {
@@ -8,8 +10,7 @@ const Dashboard = () => {
   const [display, setDisplay] = useState(false);
   const [addqs, setAddqs] = useState();
   const [loading,setLoading] =useState(false)
-  const [trigger, fetchTrigger] = useState(0)
-
+  const [User, setUser] = useState(null)
   const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
@@ -43,36 +44,30 @@ const Dashboard = () => {
       .then((data) => {
         setQuestions(data), setLoading(false);
       });
-  }, [trigger]);
+
+    fetch('https://stackunderflowbackend.onrender.com/v1/getUser', {
+      method: "POST",
+      headers: {
+          "Content-Type" : "application/json",
+          "auth-token" : localStorage.getItem("auth-token")
+      }
+      }).then((response) => response.json())
+      .then((data) => {
+          console.log(data);
+          setUser(data)})
+  }, []);
   return (
+    
     <div className="text-center dash">
+      
     {loading && <Spinner/>}
+    <h1>Recent Questions</h1>
       {questions &&
-        questions.map((el, index) => {
-          return (
-            <div key={index} className="questions">
-              <button onClick={async ()=> {setLoading(true) ,await fetch("https://stackunderflowbackend.onrender.com/question/delete/"+el._id, {
-          method: "DELETE"
-        }), setLoading(false), fetchTrigger(trigger+1)
-        }}>X</button>
-              <div className="d-flex justify-content-between" id="usdate">
-                <span className="usr">user</span>
-                <span className="text-end">
-                  {new Date(el.date).toTimeString().slice(0, 5) +
-                    " " +
-                    new Date(el.date).toDateString().slice(0, 11)}
-                </span>
-              </div>
-              <div className=" text-center" id="main-ques">
-                {el.content}
-              </div>
-            </div>
-          );
-        })}
+        questions.map((el, index) => <Question date={el.date} key={index} content={el.content} id={el.id} author={el.author} user={User}/> )}
       <button className="ask-btn" onClick={handleClick}>
         Ask Question ?
-      </button>
-      {display && (
+      </button> 
+      {/* {display && ( */}
         <div>
           <form action="" className="form form-ques">
             <input
@@ -80,13 +75,15 @@ const Dashboard = () => {
               value={addqs}
               onChange={handleChange}
               className="input"
+              placeholder="Ask Your Question"
             />
             <button type="submit" onClick={handleSubmit}>
               submit
             </button>
           </form>
         </div>
-      )}
+      {/* )} */}
+      {/* <Footer></Footer> */}
     </div>
   );
 };
