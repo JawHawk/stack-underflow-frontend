@@ -13,7 +13,6 @@ const Landing = () => {
       <Link to="./Dashboard">
         <button className="dash-btn">Go to Questions</button>
       </Link>
-
       <Footer />
     </div>
   );

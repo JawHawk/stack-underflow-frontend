@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import Forum from '../pages/Forum'
+import { useNavigate } from "react-router-dom";
 
 function Question(props) {
+  const navigate = useNavigate()
   const {date, id,content, author, user} = props  
   const [Author, setAuthor] = useState(null)
   const [loading, setloading] = useState(false)
@@ -21,7 +23,7 @@ function Question(props) {
   }, []);
 
   return (
-        <div className="questions" onClick={()=> {return (<div> <Forum id= {props.id}></Forum> </div>) }}>
+        <div className="questions" onClick={()=>{navigate('/forum/' + id)}}>
             <div className="questions-info">
                 <div className="content" >
                     {content}
