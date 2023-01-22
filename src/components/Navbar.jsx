@@ -11,7 +11,7 @@ const Navbar = () => {
           <img src={logo}></img><Link to="/"  id="name"> Stack UnderFlow</Link>
         </div>
         {loginDetail?
-        <div><Link to ="/Profile"><button>User</button> </Link> <button onClick={()=>{localStorage.removeItem("auth-token")}}> Logout</button></div>: <div className="log-sign">
+        <div><Link to ="/Profile"><button>Profile</button> </Link> <button onClick={()=>{localStorage.removeItem("auth-token")}}> Logout</button></div>: <div className="log-sign">
           <Link to="/login"><button>
             Login
           </button></Link>

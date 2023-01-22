@@ -7,13 +7,12 @@ import Navbar from "./components/Navbar";
 import Dashboard from "./pages/Dashboard";
 import Footer from "./components/Footer";
 import Profile from "./pages/Profile";
-import { useEffect } from "react";
+import { useEffect, createContext, useState } from "react";
 import Forum from "./pages/Forum";
 
 function App() {
-  useEffect;
   return (
-    <div className="App">
+      <div className="App">
       <Navbar></Navbar>
       <Routes>
         <Route exact path="/" element={<Landing/>}/>
@@ -23,8 +22,7 @@ function App() {
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/forum" element={<Forum/>}/>
       </Routes>
-      
-    </div>
+      </div>    
   );
 }
 
