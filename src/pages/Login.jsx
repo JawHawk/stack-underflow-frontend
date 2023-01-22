@@ -2,9 +2,11 @@ import React from "react";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import Spinner from "../components/Spinner";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false)
 
   function handleChange(e) {
     e.preventDefault();
@@ -16,6 +18,7 @@ const Login = () => {
   }
   const login = async (e) => {
     e.preventDefault();
+    setLoading(true)
     const response = await fetch(
       "https://stackunderflowbackend.onrender.com/v1/loggedin/login",
       {
@@ -25,13 +28,15 @@ const Login = () => {
         },
         body: JSON.stringify({ email: email, password: password }),
       }
+      
     );
-
     const data = await response.json();
     localStorage.setItem("auth-token", data.authtoken);
+    setLoading(false)
   };
   return (
     <div>
+    {loading && <Spinner/>}
       <form className="form" onSubmit={login}>
         <Link to="/">
           <button className="close">Close</button>
