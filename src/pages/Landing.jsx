@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Dashboard from "./Dashboard";
 import { Link } from "react-router-dom";
+
 const Landing = () => {
   return (
     <div>
@@ -10,9 +11,10 @@ const Landing = () => {
         All Your <span>stacks</span> under one place
       </div>
       <Link to="./Dashboard">
-        <button className="dash-btn">Dashboard</button>
+        <button className="dash-btn">Go to Questions</button>
       </Link>
-      <Footer/>
+
+      <Footer />
     </div>
   );
 };
