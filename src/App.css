@@ -225,24 +225,12 @@
   text-align: left;
 }
 .profile span {
-  position: absolute;
+  text-align: center;
   font-family: "Poppins";
-
   font-weight: 700;
-  font-size: 70px;
-
+  font-size: 30px;
   color: #e06632e4;
   text-decoration: solid;
-}
-.profile img {
-  margin-top: 100px;
-}
-.profile button {
-  position: absolute;
-  border-radius: 5px;
-  font-size: 1.5rem;
-  top: 15rem;
-  left: 17rem;
 }
 
 .ask-btn {
