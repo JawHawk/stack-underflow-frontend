@@ -208,7 +208,7 @@
 }
 .close {
   margin: auto;
-  margin-left: 40vh;
+  margin-left: 35vh;
 }
 .profile span {
   text-align: center;
@@ -233,7 +233,7 @@
 }
 
 .ask-btn{
-      position: fixed;
+      /* position: fixed; */
     /* width: 60px; */
     /* height: 45px; */
     bottom: 40px;
@@ -247,16 +247,25 @@
 
 .form-ques{
       position: fixed;
+      /* margin-bottom: 10vh; */
     /* width: 60px; */
     /* height: 45px; */
-    bottom: 20px;
-    right: 40px;
+    bottom: -70px;
+    right: 270px;
         height: 61px;
     background-color: #5e9fffc9;
     padding: 0;
     padding-inline: 15px;
     color: #000;
+    /* width: 99vw; */
     border-radius: 10px;
     text-align: center;
     box-shadow: 2px 2px 3px #999;
 }
+#password{
+  /* margin-right: 10vh; */
+  margin-right: 3vh;
+}
+/* .input{
+  align-items: center;
+} */

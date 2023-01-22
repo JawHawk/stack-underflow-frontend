@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Spinner from "../components/Spinner";
+import Footer from "../components/Footer";
 
 
 const Dashboard = () => {
@@ -43,8 +44,11 @@ const Dashboard = () => {
       });
   }, []);
   return (
+    
     <div className="text-center dash">
+      
     {loading && <Spinner/>}
+    <h1>Recent Questions</h1>
       {questions &&
         questions.map((el, index) => {
           return (
@@ -67,10 +71,10 @@ const Dashboard = () => {
             </div>
           );
         })}
-      <button className="ask-btn" onClick={handleClick}>
+      {/* <button className="ask-btn" onClick={handleClick}>
         Ask Question ?
-      </button>
-      {display && (
+      </button> */}
+      {/* {display && ( */}
         <div>
           <form action="" className="form form-ques">
             <input
@@ -78,13 +82,15 @@ const Dashboard = () => {
               value={addqs}
               onChange={handleChange}
               className="input"
+              placeholder="Ask Your Question"
             />
             <button type="submit" onClick={handleSubmit}>
               submit
             </button>
           </form>
         </div>
-      )}
+      {/* )} */}
+      {/* <Footer></Footer> */}
     </div>
   );
 };
