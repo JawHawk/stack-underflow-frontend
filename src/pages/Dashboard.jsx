@@ -67,12 +67,12 @@ const Dashboard = () => {
             </div>
           );
         })}
-      <button className="text-center" onClick={handleClick}>
-        Ask Question
+      <button className="ask-btn" onClick={handleClick}>
+        Ask Question ?
       </button>
       {display && (
         <div>
-          <form action="" className="form">
+          <form action="" className="form form-ques">
             <input
               type="text"
               value={addqs}

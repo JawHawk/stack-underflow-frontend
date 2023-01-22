@@ -10,7 +10,7 @@ const Landing = () => {
         All Your <span>stacks</span> under one place
       </div>
       <Link to="./Dashboard">
-        <button>Dashboard</button>
+        <button className="dash-btn">Dashboard</button>
       </Link>
       <Footer/>
     </div>
