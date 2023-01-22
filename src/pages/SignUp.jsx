@@ -50,7 +50,7 @@ const SignUp = () => {
         <Link to="/">
           <button className="close">Close</button>
         </Link>
-        <h1>SignIn</h1>
+        <h1>SignUp</h1>
         Name :
         <input
           type="text"
@@ -60,7 +60,7 @@ const SignUp = () => {
           value={name}
           onChange={handleChange}
         />
-        <br/>
+        <br />
         <br />
         Email :
         <input
@@ -71,7 +71,7 @@ const SignUp = () => {
           name="email"
           onChange={handleChange}
         />
-        <br/>
+        <br />
         <br />
         Password :
         <input
