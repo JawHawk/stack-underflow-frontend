@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Question from "../components/Question";
 import Spinner from "../components/Spinner";
+import Footer from "../components/Footer";
 import Forum from "./Forum";
 
 
@@ -26,8 +27,10 @@ const Dashboard = () => {
         body: JSON.stringify({ content: addqs }),
       }
       );
+      setAddqs("");
       const data = await response.json();
     setLoading(false)
+    
   };
   const handleChange = (e) => {
     e.preventDefault();
@@ -84,7 +87,7 @@ const Dashboard = () => {
         ))}
 
       {/* )} */}
-      {/* <Footer></Footer> */}
+      <Footer></Footer>
     </div>
   );
 };

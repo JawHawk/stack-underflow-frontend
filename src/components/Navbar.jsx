@@ -18,6 +18,10 @@ const Navbar = () => {
             {" "}
             Stack UnderFlow
           </Link>
+
+        </div>
+        <div>
+          {/* <button className="menu" >Menu</button> */}
         </div>
         {loginDetail ? (
           <div>
@@ -28,6 +32,7 @@ const Navbar = () => {
           </div>
         ) : (
           <div className="log-sign">
+            {/* <button>hello</button> */}
             <Link to="/login">
               <button>Login</button>
             </Link>
