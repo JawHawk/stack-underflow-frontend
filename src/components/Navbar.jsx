@@ -2,13 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "./../assets/logo.png"
 const Navbar = () => {
+  const loginDetail = localStorage.getItem("auth-token")
+  
   return (
     <div className="nav-og">
       <ul className="nav" >
         <div className="logo">
           <img src={logo}></img><Link to="/"  id="name"> Stack UnderFlow</Link>
         </div>
-        <div className="log-sign">
+        {loginDetail?
+        <div><Link to ="/Profile"><button>User</button> </Link> <button onClick={()=>{localStorage.removeItem("auth-token")}}> Logout</button></div>: <div className="log-sign">
           <Link to="/login"><button>
             Login
           </button></Link>
@@ -16,7 +19,7 @@ const Navbar = () => {
           <button>
             Sign up
           </button></Link>
-        </div>
+        </div>}
       </ul>
     </div>
   );
