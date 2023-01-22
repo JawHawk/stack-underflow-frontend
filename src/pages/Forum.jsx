@@ -1,17 +1,18 @@
 import React from 'react'
 
 const Forum = (props) => {
-    const getQuestion = async () => {
-        await fetch("/question/get/"+props.id)
-    }
+  // const getQuestion = async () => {
+  //   await fetch("/question/get/" + props.id)
+  // }
   return (
-    <div>
-      <h1>Question</h1> 
-      <h3>Answer</h3>
-      <p>Date</p>
-      <p>Author name</p>
-
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
     </div>
+
   )
 }
 

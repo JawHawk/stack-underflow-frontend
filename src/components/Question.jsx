@@ -35,7 +35,7 @@ function Question(props) {
                     </span>
                   </div>
             </div>
-                {Author && (Author.email === user.email) && <button onClick={async ()=> {await fetch("https://stackunderflowbackend.onrender.com/question/delete/"+id, {
+                {Author && user && (Author.email === user.email) && <button onClick={async ()=> {await fetch("https://stackunderflowbackend.onrender.com/question/delete/"+id, {
               method: "DELETE"
             })
             }}>X</button> }
