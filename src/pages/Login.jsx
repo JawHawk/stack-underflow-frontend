@@ -1,13 +1,13 @@
 import React from "react";
 import Footer from "../components/Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Spinner from "../components/Spinner";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false)
-
+  const navigate = useNavigate()
   function handleChange(e) {
     e.preventDefault();
     if (e.target.name === "email") {
@@ -19,6 +19,8 @@ const Login = () => {
   const login = async (e) => {
     e.preventDefault();
     setLoading(true)
+    setEmail("")
+    setPassword("")
     const response = await fetch(
       "https://stackunderflowbackend.onrender.com/v1/loggedin/login",
       {
@@ -33,6 +35,7 @@ const Login = () => {
     const data = await response.json();
     localStorage.setItem("auth-token", data.authtoken);
     setLoading(false)
+    navigate("/dashboard")
   };
   return (
     <div>

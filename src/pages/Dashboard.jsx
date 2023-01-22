@@ -8,10 +8,12 @@ const Dashboard = () => {
   const [display, setDisplay] = useState(false);
   const [addqs, setAddqs] = useState();
   const [loading,setLoading] =useState(false)
+  const [trigger, fetchTrigger] = useState(0)
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     setLoading(true)
+    fetchTrigger(trigger +1)
     const response = await fetch(
       "https://stackunderflowbackend.onrender.com/question/new",
       {
@@ -22,8 +24,8 @@ const Dashboard = () => {
         },
         body: JSON.stringify({ content: addqs }),
       }
-    );
-    const data = await response.json();
+      );
+      const data = await response.json();
     setLoading(false)
   };
   const handleChange = (e) => {
@@ -41,7 +43,7 @@ const Dashboard = () => {
       .then((data) => {
         setQuestions(data), setLoading(false);
       });
-  }, []);
+  }, [trigger]);
   return (
     <div className="text-center dash">
     {loading && <Spinner/>}
@@ -49,9 +51,9 @@ const Dashboard = () => {
         questions.map((el, index) => {
           return (
             <div key={index} className="questions">
-              <button onClick={async ()=> {await fetch("https://stackunderflowbackend.onrender.com/question/delete/"+el._id, {
+              <button onClick={async ()=> {setLoading(true) ,await fetch("https://stackunderflowbackend.onrender.com/question/delete/"+el._id, {
           method: "DELETE"
-        })
+        }), setLoading(false), fetchTrigger(trigger+1)
         }}>X</button>
               <div className="d-flex justify-content-between" id="usdate">
                 <span className="usr">user</span>
