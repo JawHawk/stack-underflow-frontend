@@ -9,7 +9,7 @@ export class Spinner extends Component {
       <span className="spinner-grow spinner-grow-sm mx-2" role="status" aria-hidden="true"></span>
       Loading...
     </button> */}
-    <img src={logoGif} alt="" srcset="" />
+    <img src={logoGif} alt=""/>
 
     </div>)
   }

@@ -6,13 +6,12 @@ import SignUp from "./pages/SignUp";
 import Navbar from "./components/Navbar";
 import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
-import { useEffect } from "react";
+import { useEffect, createContext, useState } from "react";
 import Forum from "./pages/Forum";
 
 function App() {
-  useEffect;
   return (
-    <div className="App">
+      <div className="App">
       <Navbar></Navbar>
       <Routes>
         <Route exact path="/" element={<Landing/>}/>
@@ -22,8 +21,7 @@ function App() {
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/forum/:questionId" element={<Forum/>}/>
       </Routes>
-      
-    </div>
+      </div>    
   );
 }
 

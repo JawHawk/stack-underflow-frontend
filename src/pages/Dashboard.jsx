@@ -7,7 +7,6 @@ import Forum from "./Forum";
 
 const Dashboard = () => {
   const [questions, setQuestions] = useState(null);
-  const [display, setDisplay] = useState(false);
   const [addqs, setAddqs] = useState();
   const [loading,setLoading] =useState(false)
   const [User, setUser] = useState(null)
@@ -34,11 +33,8 @@ const Dashboard = () => {
     e.preventDefault();
     setAddqs(e.target.value);
   };
-  const handleClick = () => {
-    setDisplay(!display);
-  };
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     const url = "https://stackunderflowbackend.onrender.com/question/all";
     fetch(url)
       .then((response) => response.json())
@@ -46,39 +42,47 @@ const Dashboard = () => {
         setQuestions(data), setLoading(false);
       });
 
-    fetch('https://stackunderflowbackend.onrender.com/v1/getUser', {
+    fetch("https://stackunderflowbackend.onrender.com/v1/getUser", {
       method: "POST",
       headers: {
-          "Content-Type" : "application/json",
-          "auth-token" : localStorage.getItem("auth-token")
-      }
-      }).then((response) => response.json())
+        "Content-Type": "application/json",
+        "auth-token": localStorage.getItem("auth-token"),
+      },
+    })
+      .then((response) => response.json())
       .then((data) => {
-          console.log(data);
           setUser(data)})
   }, []);
   return (
-    
     <div className="text-center dash">
-      
-    {loading && <Spinner/>}
-    <h1>Recent Questions</h1>
+      <div>
+        <form action="" className="form form-ques">
+          <input
+            type="text"
+            value={addqs}
+            onChange={handleChange}
+            className="input"
+            placeholder="Ask Your Question"
+          />
+          <button type="submit" onClick={handleSubmit}>
+            submit
+          </button>
+        </form>
+      </div>
+      <h2><strong>Recent Questions</strong></h2>
+      {loading && <Spinner />}
       {questions &&
-        questions.map((el, index) => <Question  date={el.date} key={index} content={el.content} id={el._id} author={el.author} user={User} /> )}
-        <div>
-          <form action="" className="form form-ques">
-            <input
-              type="text"
-              value={addqs}
-              onChange={handleChange}
-              className="input"
-              placeholder="Ask Your Question"
-            />
-            <button type="submit" onClick={handleSubmit}>
-              submit
-            </button>
-          </form>
-        </div>
+        questions.map((el, index) => (
+          <Question
+            date={el.date}
+            key={index}
+            content={el.content}
+            id={el._id}
+            author={el.author}
+            user={User}
+          />
+        ))}
+
       {/* )} */}
       {/* <Footer></Footer> */}
     </div>
