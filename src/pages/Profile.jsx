@@ -1,5 +1,6 @@
 import React from "react";
 import userImg from "./../assets/profile-bot.png";
+import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
 const Profile = () => {
   const [User, setUser] = useState(null);
@@ -31,19 +32,22 @@ const Profile = () => {
   }, []);
 
   return (
-    <div className="profile" style={style}>
-      <img src={userImg} style={{ height: "400px" }} />
-      <div style={style2}>
-        {!User && <h3>Loading ...</h3>}
-        {User && (
-          <div>
-            <span>Welcome {User.name ? User.name : "Anonymous"} !!</span>
-            <h5>Email: {User.email}</h5>
+    <div>
+      <div className="profile" style={style}>
+        <img src={userImg} style={{ height: "400px" }} />
+        <div style={style2}>
+          {!User && <h3>Loading ...</h3>}
+          {User && (
+            <div>
+              <span>Welcome {User.name ? User.name : "Anonymous"} !!</span>
+              <h5>Email: {User.email}</h5>
 
-            <h5>Id: {User._id}</h5>
-          </div>
-        )}
+              <h5>Id: {User._id}</h5>
+            </div>
+          )}
+        </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };
