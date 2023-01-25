@@ -1,18 +1,16 @@
-import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import Dashboard from "./Dashboard";
+import React from 'react'
 import { Link } from "react-router-dom";
-import man from "./../assets/man-doubt.png";
-import women from "./../assets/women-doubt.png";
+import "../requireddata/background.css"
+import man from "../requireddata/man-doubt.png";
+import women from "../requireddata/women-doubt.png";
 
-const Landing = () => {
+const Background = () => {
   return (
-    <div>
+    <div className='container'>
       <div className="tag">
         All Your <span>stacks</span> under one place
       </div>
-      <Link to="./Dashboard">
+      <Link to="/allquestion">
         <button
           className="dash-btn"
           style={{ position: "absolute", left: "40vw", top: "180px" }}
@@ -30,12 +28,15 @@ const Landing = () => {
       </div>
 
       <div className="people-ilus">
-        <img className="man" src={man} alt="" />
-        <img className="woman" src={women} alt="" />
+        <img className="man" src={man} alt="" style={{    height: "65vh",
+    position: "absolute",
+    left: "12vw"}}/>
+        <img className="woman" src={women} alt="" style={{    height: "65vh",
+    position: "absolute",
+    right: "12vw"}}/>
       </div>
-      <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default Landing;
+export default Background
