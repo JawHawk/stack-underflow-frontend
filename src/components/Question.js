@@ -70,7 +70,7 @@ const Question = () => {
       {ques && (
         <div className="quest card">
           <div className="heading">
-            Q: <span className="text-primary">{ques.content}</span>
+            Q: <span className="">{ques.content}</span>
           </div>
           <div className="author">Author: {ques.author[0]}</div>
           <div className="time">
@@ -92,7 +92,9 @@ const Question = () => {
         answer.map((ele) => {
           return (
             <div className="ans card">
-              <div className="heading bg-red">Answer: {ele.content}</div>
+              <div className="heading" style={{ fontWeight: "300" }}>
+                Answer: <span style={{ fontWeight: "400" }}>{ele.content}</span>{" "}
+              </div>
               <div className="author">Posted by : {ele?.author[0]}</div>
               <div className="time">
                 Posted on : {new Date(ele.date).toDateString()}
@@ -112,8 +114,9 @@ const Question = () => {
         })
       ) : (
         <div className="ans">
-          <div className="heading">
+          <div className="heading text-center">
             Currently there is no Answer for this question
+            <div className="fs-6">Be first one to answer this question</div>
           </div>
         </div>
       )}
