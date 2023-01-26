@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../requireddata/allquestion.css";
+import Spinner from "./Spinner";
 
 const Allquestion = () => {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false)
   const [questions, setQuestions] = useState();
   const [addques, setAddQues] = useState();
   const [user, setUser] = useState();
 
   useEffect(() => {
+    setLoading(true)
     fetch("https://stackunderflowbackend.onrender.com/question/all", {
       method: "GET",
       headers: {
@@ -17,6 +20,7 @@ const Allquestion = () => {
     })
       .then((resp) => resp.json())
       .then((data) => setQuestions(data));
+      setLoading(false)
   }, []);
 
   useEffect(() => {
@@ -34,6 +38,7 @@ const Allquestion = () => {
   }, []);
   const handleAdd = (e) => {
     e.preventDefault();
+    setLoading(true)
     fetch("https://stackunderflowbackend.onrender.com/question/new", {
       method: "POST",
       headers: {
@@ -43,18 +48,22 @@ const Allquestion = () => {
       body: JSON.stringify({ content: addques }),
     });
     setAddQues("");
+    setLoading(false)
   };
 
   const handleDelete = (id) => {
+    setLoading(true)
     fetch("https://stackunderflowbackend.onrender.com/question/delete/" + id, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       },
     });
+    setLoading(false)
   };
   return (
     <div>
+    {loading && <Spinner/>}
       <form action="" onSubmit={handleAdd}>
         <label htmlFor="addques">Add Question: </label>
         <input

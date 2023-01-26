@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b18b0dcd.css",
+    "main.js": "/static/js/main.83c1145c.js",
+    "static/media/man-doubt.png": "/static/media/man-doubt.2ac04f25300b11e346ee.png",
+    "static/media/women-doubt.png": "/static/media/women-doubt.e36415491c31e3868a36.png",
+    "static/media/logo.png": "/static/media/logo.199b1ae361f41a543532.png",
+    "index.html": "/index.html",
+    "main.b18b0dcd.css.map": "/static/css/main.b18b0dcd.css.map",
+    "main.83c1145c.js.map": "/static/js/main.83c1145c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b18b0dcd.css",
+    "static/js/main.83c1145c.js"
+  ]
+}

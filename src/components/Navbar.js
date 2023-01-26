@@ -14,7 +14,7 @@ const Navbar = () => {
     <div className="nav-og">
       <ul className="nav">
         <div className="logo">
-          <img src={logo}></img>
+          <img src={logo} alt="logo"></img>
           <Link to="/" id="name">
             Stack UnderFlow
           </Link>

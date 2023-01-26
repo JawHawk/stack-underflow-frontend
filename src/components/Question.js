@@ -2,15 +2,18 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "../requireddata/question.css";
+import Spinner from "./Spinner";
 
 const Question = () => {
   const { questionid } = useParams();
+  const [loading, setLoading] = useState(false)
   const navigate = useNavigate();
   const [answer, setAnswer] = useState();
   const [ans, setAns] = useState();
   const [ques, setques] = useState();
   const [user, setUser] = useState();
   useEffect(() => {
+    setLoading(true)
     fetch(
       "https://stackunderflowbackend.onrender.com/question/get/" + questionid
     )
@@ -30,6 +33,7 @@ const Question = () => {
       .then((data) => {
         setUser(data._id);
       });
+      setLoading(false)
   }, []);
 
   const handleAdd = (e) => {
@@ -67,6 +71,7 @@ const Question = () => {
 
   return (
     <div>
+    {loading && <Spinner/>}
       {ques && (
         <div className="quest card">
           <div className="heading">
