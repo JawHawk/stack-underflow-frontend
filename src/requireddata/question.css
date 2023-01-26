@@ -3,19 +3,29 @@
   border: 2px solid rgba(0, 0, 0, 0.423);
   padding: 15px;
   margin: 10px;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.66);
+  border-radius: 16px;
+  backdrop-filter: blur(12.9px);
+  -webkit-backdrop-filter: blur(12.9px);
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-
+.quest button {
+  width: fit-content;
+}
 .heading {
   font-size: 20px;
   text-align: left;
 }
 .heading span {
-  font-weight: 500; 
-  text-shadow: 0px 0px 2px #bf000098;
+  font-weight: 500;
+  font-size: 1.4rem;
 }
 
 .author {
   text-align: end;
+  margin-top: 12px;
 }
 
 .time {
@@ -26,6 +36,19 @@
   width: 85vw;
   border: 2px solid black;
   margin: auto;
-  margin-top: 40px;
+  margin-top: 12px;
   padding: 20px;
+  background: #e8ceced9;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+  backdrop-filter: blur(12.8px);
+  -webkit-backdrop-filter: blur(12.8px);
+  border: 1px solid rgba(165, 164, 164, 0.71);
+}
+.ans .heading{
+  font-weight: 300;
+    background: aliceblue;
+    border-radius: 10px;
+    padding: 20px;
+    margin: -10px;
 }
